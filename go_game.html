@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Defender Goal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <script src="código.js"></script>
+    </head>
+    <body onresize="ajustar_tamanho()"><!--Chamamos a function dentro de um onresize e do body para identificar quando haver a alteração de tamanho da tela-->
+
+
+    <div class="estilo">
+         <span id="placar">score:</span> <span id="score"> 0</span>
+    </div>
+
+    <div class="painel">
+
+        <div class="vidas">
+            <img id="vida1" src="imagens/imagens/coracao_cheio.png">
+            <img id="vida2" src="imagens/imagens/coracao_cheio.png">
+            <img id="vida3" src="imagens/imagens/coracao_cheio.png">
+            <img id="vida4" src="imagens/imagens/coracao_cheio.png">
+            <img id="vida5" src="imagens/imagens/coracao_cheio.png">
+        </div>
+
+        <div class="temporizador">
+            Tempo restante: <span id="cronometro"></span>
+        </div>
+    </div>
+
+
+    <script>
+
+        document.getElementById('cronometro').innerHTML = intervalo_de_tempo
+
+        var criar_bola = setInterval(
+            function(){
+            posicoes_aleatorias()
+            },criador_de_bola_tempo
+        )
+    </script>
+
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defender Goal</title>
+    <link href="estilo.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <img src="imagens/imagens/logo_game.png" width="500">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <div class="mb-2">
+                        <select class="form-control" id="nivel">
+                            <option value="">--Selecionar o nível--</option>
+                            <option value="normal">Normal</option>
+                            <option value="dificil">Difícil</option>
+                            <option value="very_hard">Very Hard</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-danger btn-lg" onclick='iniciar_jogo()'>Iniciar jogo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function iniciar_jogo(){
+            var nivel = (document.getElementById('nivel').value)
+            if(nivel===''){
+                alert('Selecione um nível para iniciar o jogo')
+                return false
+            }
+            
+            window.location.href = 'go_game.html?' + nivel //Além de forçar o redirecionamento da página, ainda capturamos o parâmetro de nível
+            
+        }
+    </script>
+
+</body>
+</html>
